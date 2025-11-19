@@ -24,7 +24,7 @@ python-dateutil==2.8.2
 # Image Processing & OCR
 pytesseract==0.3.10
 # easyocr==1.7.0  # Claude API로 대체
-opencv-python==4.8.1.78
+opencv-python-headless==4.8.1.78  # Streamlit Cloud 호환 (headless 버전)
 pdf2image==1.16.3
 python-Levenshtein==0.25.0
 dateparser==1.2.0
