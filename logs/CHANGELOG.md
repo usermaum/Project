@@ -11,6 +11,53 @@
 
 ---
 
+## [0.50.4] - 2025-11-20
+
+### 📚 문서 (Documentation): Next.js 마이그레이션 플랜 작성
+
+#### 📝 변경사항
+
+**신규 문서:**
+- `Documents/Planning/MIGRATION_TO_MODERN_STACK.md` (1937줄)
+  - Streamlit → Next.js + FastAPI 마이그레이션 계획
+  - Next.js 14 선택 근거 (SSR, SSG, ISR, Server Components)
+  - 12개월 4단계 마이그레이션 로드맵
+  - React vs Next.js 비교표
+  - 데이터베이스 마이그레이션 전략 (SQLite → PostgreSQL)
+  - 리스크 관리 및 ROI 분석
+
+**기술 스택 제안:**
+- Frontend: Next.js 14 + TypeScript + TailwindCSS + shadcn/ui
+- Backend: FastAPI + PostgreSQL + Redis
+- Deployment: Vercel (Frontend) + AWS/GCP (Backend)
+
+**커밋:**
+- c97231c3: docs: Next.js 마이그레이션 플랜 작성
+
+### 🐛 패치 (Bug Fix): SQLite I/O 오류 방지를 위한 데이터베이스 설정 개선
+
+#### 📝 변경사항
+- `app/models/base.py`:
+  - SQLite 엔진 설정 개선 (WSL 환경 최적화)
+  - timeout: 30초 설정
+  - isolation_level: None (Autocommit mode로 I/O 오류 방지)
+  - pool_pre_ping: True (연결 확인)
+  - pool_recycle: 3600 (1시간마다 연결 재생성)
+
+## [0.50.3] - 2025-11-20
+
+### 🐛 패치 (Bug Fix): opencv-python-headless 복원 (Streamlit Cloud 배포용)
+
+#### 📝 변경사항
+- 변경사항 상세 기록 필요
+
+## [0.50.2] - 2025-11-20
+
+### 🐛 패치 (Bug Fix): 사이드바 버튼 클릭 문제 및 import 경로 수정
+
+#### 📝 변경사항
+- 변경사항 상세 기록 필요
+
 ## [0.50.1] - 2025-11-19
 
 ### 🐛 패치 (Bug Fix): Gemini OCR 오류 처리 개선 및 프로젝트 문서 추가
